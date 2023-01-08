@@ -31,12 +31,12 @@ const PaymentForm = () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ amount: amount * 100 })
-        }).then(res => res.json());
-        const {
-            paymentIntent: { client_secret },
-        }  = response;
+        }).then((res) => {
+            res.json();
+        });
+        const clientSecret = response.paymentIntent.client_secret;
 
-        const paymentResult = await stripe.confirmCardPayment(client_secret, {
+        const paymentResult = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: elements.getElement(CardElement),
                 billing_details: {
@@ -51,7 +51,7 @@ const PaymentForm = () => {
             alert(paymentResult.error.message);
         } else {
             if(paymentResult.paymentIntent.status === 'succeeded'){
-                alert('Payment Successful')
+                alert('Payment Successful');
             }
         }
     };
@@ -69,7 +69,7 @@ const PaymentForm = () => {
                 </PaymentButton>
             </FormContainer>
         </PaymentFormContainer>
-    )
-}
+    );
+};
 
 export default PaymentForm;
