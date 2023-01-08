@@ -7,8 +7,8 @@ import { ShoppingBagIcon, ItemCount, CartIconContainer } from './cart-icon.style
 
 const CartIcon = () => {
     const dispatch = useDispatch();
-    const cartCount = useSelector(selectCartCount);
     const isCartOpen = useSelector(selectIsCartOpen);
+    const cartCount = useSelector(selectCartCount);
 
     const toggleIsCartOpen = () => dispatch(setIsCartOpen(!isCartOpen));
 
@@ -17,7 +17,7 @@ const CartIcon = () => {
             <ShoppingBagIcon className='shopping-bag-icon' />
             <ItemCount>{cartCount}</ItemCount>
         </CartIconContainer>
-    )
-}
+    );
+};
 
 export default CartIcon;
