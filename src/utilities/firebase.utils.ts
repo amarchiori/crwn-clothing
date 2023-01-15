@@ -24,7 +24,6 @@ import {
     QueryDocumentSnapshot,
 } 
 from 'firebase/firestore';
-import { StringLiteral } from 'typescript';
 import { Category } from '../store/categories/category.types';
 
 const firebaseConfig = {

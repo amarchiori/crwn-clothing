@@ -1,4 +1,4 @@
-import { takeLatest, all, call, put } from "redux-saga/effects";
+import { takeLatest, all, call, put } from "typed-redux-saga";
 
 import { getCategoriesandDocuments } from '../../utilities/firebase.utils';
 
@@ -8,10 +8,10 @@ import { CATEGORIES_ACTION_TYPES } from "./category.types";
 
 export function* fetchCategoriesAsync() {
     try {
-        const categoriesArray = yield call(getCategoriesandDocuments,'categories');
-        yield put(fetchCategoriesSuccess(categoriesArray))
+        const categoriesArray = yield* call(getCategoriesandDocuments);
+        yield* put(fetchCategoriesSuccess(categoriesArray))
     } catch (error) {
-        yield put(fetchCategoriesFailed(error));
+        yield* put(fetchCategoriesFailed(error as Error));
     }
 }
 
