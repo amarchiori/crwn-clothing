@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ProductCardContainer = styled.div`
-    width: 100%; 
+    width: 22vw; 
     display: flex; 
     flex-direction: column; 
     height: 350px; 
@@ -32,6 +32,30 @@ export const ProductCardContainer = styled.div`
             display: flex; 
         } 
     }
+
+    @media screen and (max-width: 960px) {
+        button {
+            font-size: 12px;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 40vw;
+        button {
+          display: block;
+          opacity: 0.9;
+          min-width: unset;
+          padding: 0 10px;
+          &:hover {
+            img {
+              opacity: unset;
+            }
+            button {
+              opacity: unset;
+            }
+          }
+        }
+      }
 `;
 
 export const Footer = styled.div`
@@ -39,7 +63,7 @@ export const Footer = styled.div`
     height: 5%; 
     display: flex; 
     justify-content: space-between; 
-    font-size: 18px; 
+    font-size: 16px; 
 `;
 
 export const Name = styled.span` 

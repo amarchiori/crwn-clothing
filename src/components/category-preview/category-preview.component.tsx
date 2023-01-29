@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import ProductCard from '../product-card/product-card.component';
 import {CategoryPreviewContainer, Title, Preview} from './category-preview.styles';
 import { CategoryItem } from '../../store/categories/category.types';
@@ -8,7 +8,7 @@ type CategoryPreviewProps = {
     products: CategoryItem[];
 }
 
-const CategoryPreview: FC<CategoryPreviewProps> = ({ title, products }) => {
+const CategoryPreview: FC<CategoryPreviewProps> = memo(({ title, products }) => {
     return (
         <CategoryPreviewContainer>
             <h2>
@@ -24,6 +24,6 @@ const CategoryPreview: FC<CategoryPreviewProps> = ({ title, products }) => {
             </Preview>
         </CategoryPreviewContainer>
     )
-}
+})
 
 export default CategoryPreview;

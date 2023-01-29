@@ -14,7 +14,7 @@ export const BackgroundImage = styled.div<BackgroundImageProps>`
 
 export const Body = styled.div`
     height: 90px; 
-    padding: 0 25px; 
+    padding: 0 20px; 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
@@ -38,11 +38,11 @@ export const Body = styled.div`
     } 
     
     &:first-child { 
-        margin-right: 7.5px; 
+        margin-right: 7px; 
     } 
     
     &:last-child { 
-        margin-left: 7.5px; 
+        margin-left: 7px; 
     } 
 `
 
@@ -59,12 +59,19 @@ export const DirectoryItemContainer = styled.div`
     
     &:hover { 
         cursor: pointer; 
-        & .background-image { 
+        ${BackgroundImage} { 
             transform: scale(1.1); 
             transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95); 
         } 
-        & .directory-item-body { 
+        ${Body} { 
             opacity: 0.9; 
         } 
     } 
+
+    @media screen and (max-width: 800px) {
+        height: 200px;
+        ${Body} {
+            padding: 0px 5px;
+        }
+      }
 `
