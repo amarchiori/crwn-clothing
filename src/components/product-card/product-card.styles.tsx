@@ -56,6 +56,10 @@ export const ProductCardContainer = styled.div`
           }
         }
       }
+
+    @media screen and (max-width: 400px) {
+      width: 80vw;
+    }
 `;
 
 export const Footer = styled.div`
