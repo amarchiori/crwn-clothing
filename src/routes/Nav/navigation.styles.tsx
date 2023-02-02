@@ -17,8 +17,8 @@ export const NavigationContainer = styled.div`
 
 export const LogoContainer = styled(Link)`
     height: 100%;
-    width: 70px;
-    padding: 25px;
+    width: 85px;
+    padding: 20px;
 
     @media screen and (max-width: 800px) {
         width: 50px;

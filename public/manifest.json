@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Shop Shop",
+  "name": "Shop by Alessandra",
   "icons": [
     {
       "src": "%PUBLIC_URL%/favicon.ico",
@@ -8,9 +8,16 @@
       "type": "image/x-icon"
     },
     {
-      "src": "icon-color.png",
+      "src": "icon-268.png",
       "type": "image/png",
-      "sizes": "96x96"
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
